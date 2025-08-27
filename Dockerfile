@@ -1,22 +1,15 @@
-
 # Use official Node.js 22.16.0 image
-FROM node:22-slim
+FROM node:22.16.0
 
 # Set working directory
 WORKDIR /usr/src/app
 
-# Copy package.json and package-lock.json
-COPY package*.json ./
+# Install express globally (or locally if you prefer)
+RUN npm install express
 
-# Install dependencies
-RUN npm install
-
-# Copy the rest of the application code
+# Copy all app files
 COPY . .
 
-# Expose port (change if your app uses a different port)
-EXPOSE 3000
-
-# Start the application
+# Start the app
 CMD ["node", "app.js"]
 
