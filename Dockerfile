@@ -10,8 +10,7 @@ RUN npm install express dotenv
 # Copy all app files
 COPY . .
 
-# Environment variables
-ENV VERIFY_TOKEN=123456
+
 
 # Expose the port the app runs on
 EXPOSE 3000
